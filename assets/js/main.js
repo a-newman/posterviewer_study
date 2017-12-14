@@ -193,8 +193,11 @@ $(document).ready(function() {
         if (config.meta.aggregate) {
             state.taskOutputs = {};
         }
-        custom.loadTasks(config.meta.numSubtasks).done(function(taskInputs) {
+        custom.loadTasks().done(function(data) {
+            var numSubtasks = data[0];
+            var taskInputs = data[1];
             state.taskInputs = taskInputs;
+            config.meta.numSubtasks = numSubtasks;
             populateMetadata(config);
             setupButtons(config);
         });

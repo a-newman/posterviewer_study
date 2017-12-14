@@ -28,10 +28,10 @@
                 <h3>Guidelines:</h3>
                 <ol class="instructions-steps">
                 </ol>
-                <div id="sample-task">
+                <!--<div id="sample-task">
                     <h3>Sample task:</h3>
                     <div id="instructions-demo"></div>
-                </div>
+                </div>-->
                 <div class="ui primary button right floated instruction-button">Continue</div>
             </div>
         </div>
@@ -46,10 +46,33 @@
             </div>
         </div>
         <!-- vv CUSTOM EXPERIMENT MARKUP GOES HERE vv -->
-        <div class="row">
-            <h4 class="exp-data">Input data for task</h4>
-            <div class="right aligned twelve wide column" id="exp">
-                <input id="exp-input">
+        <div id="currentTask">
+
+            <div class="row subtask" id="confirm-show-gif">
+                <div class="left aligned fourteen wide column">
+                    <h3 class="ui header">You will now be shown the thumbnail for <span style="font-weight: 900"><span class="num-seconds"></span> seconds.</span></h3>
+                    <button class="ui positive button" id="show-thumbnail-button">Show me the thumbnail</button>
+                </div>
+            </div>
+
+            <div class="row subtask" style="display: none" id="show-thumbnail">
+                <div class="left aligned fourteen wide column" id="thumbnail-container"">
+                    <img width="100%" src="">
+                </div>
+                <div id="thumbnail-timer" class="ui primary basic button huge right floated" style="margin-top: 2%">0:<span class="timeleft"></span></div>
+            </div>
+
+            <div id="do-study-subtask" class="subtask">
+                <div class="row">
+                    <h3>Please fill out the following form about the poster you just reviewed. <b>Pleas submit the form before clicking 'Next' button.</b></h3>
+                    <div id="poster-form"></div>
+                </div>
+            </div>
+            <div id="demographic-form" class="subtask">
+                <h3>Please complete this demographic survey.</h3>
+            </div>
+            <div id="done" class="subtask">
+                <h3>You're done! Thank you for participating in our study.</h3>
             </div>
         </div>
         <!-- ^^ CUSTOM EXPERIMENT MARKUP GOES HERE ^^ -->
@@ -70,12 +93,12 @@
             <div class="eight wide column"></div>
             <div class="right aligned eight wide column">
                 <div id="final-task-fields" class="ui form">
-                    <div id="feedback-field" class="field">
+                    <!--<div id="feedback-field" class="field">
                         <label>
                             Any comments or feedback?
                         </label>
                         <textarea id="feedback-input" rows="2"></textarea>
-                    </div>
+                    </div>-->
                     <div class="field">
                         <div id="submit-button" class="ui green right floated button">Submit</div>
                     </div>

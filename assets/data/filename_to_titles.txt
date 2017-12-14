@@ -1,0 +1,13 @@
+ACam_poster.jpg, Computational Imaging on the Electrical Grid
+Amir_poster.jpg, Synthesizing 3D shapes via modeling multi-view depth maps and silhouettes with deep generative networks
+carlVondrick.jpg, Generating the Future with Adversarial Transformers
+cvpr17_poster_wenzhen.jpg, Connecting look and feel: associating the visual and tactile properties of physical materials
+DavidBau.jpg, Network Dissection: Quantifying Interpretability of Deep Visual Representations
+DenseNet.jpg, Densely Connected Convolutional Networks
+emotion_recognition.jpg, Emotion Recognition in Context
+jiajun.jpg, Neural Scene De-rendering
+julian_trevor.jpg, Efficient Global Point Cloud Alignment Using Bayesian Nonparameterics
+Lluis_polyrnn.jpg, Annotating Object Instances with a Polygon-RNN
+poster_v1_sceneparsing.jpg, Scene Parsing through ADE20K Dataset
+recipes.jpg, Learning Cross-modal Embeddings for Cooking Recipes and Food Images
+watermarks_cvpr17_poster.jpg, On the Effectiveness of Visible Watermarks
