@@ -1,0 +1,6 @@
+watermarks_cvpr17_poster, other:kimberli
+recipes, random
+Lluis_polyrnn, self
+emotion_recognition, self
+jiajun, static
+carlVondrick, static

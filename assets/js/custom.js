@@ -90,6 +90,7 @@ var custom = {
 
         $('#confirm-show-gif').show();
         $('#prev-button').hide();
+        $('#next-button').hide();
 
         $('.num-seconds').text(NUM_SECONDS);
 
