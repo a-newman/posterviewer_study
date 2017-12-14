@@ -1,0 +1,6 @@
+jiajun.jpg, jiajun.jpg
+watermarks_cvpr17_poster.gif, watermarks_cvpr17_poster.jpg
+emotion_recognition.gif, emotion_recognition.jpg
+recipes.gif, recipes.jpg
+Lluis_polyrnn.gif, Lluis_polyrnn.jpg
+carlVondrick.jpg, carlVondrick.jpg

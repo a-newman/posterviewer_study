@@ -1,0 +1,6 @@
+watermarks_cvpr17_poster.jpg, watermarks_cvpr17_poster.jpg
+carlVondrick.gif, carlVondrick.jpg
+ACam_poster.gif, ACam_poster.jpg
+poster_v1_sceneparsing.gif, poster_v1_sceneparsing.jpg
+DavidBau.gif, DavidBau.jpg
+recipes.jpg, recipes.jpg
