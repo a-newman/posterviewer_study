@@ -1,4 +1,4 @@
-const NUM_SECONDS = 0;
+const NUM_SECONDS = 12;
 
 const MAPPING_PATH = "assets/data/filename_to_titles.txt";
 
