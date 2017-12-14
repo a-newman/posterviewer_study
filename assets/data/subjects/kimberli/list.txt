@@ -1,6 +1,0 @@
-ACam_poster.jpg
-carlVondrick.jpg_data.gif
-DavidBau.jpg_data.gif
-poster_v1_sceneparsing.jpg
-recipes.jpg_data.gif
-watermarks_cvpr17_poster.jpg_5.gif
