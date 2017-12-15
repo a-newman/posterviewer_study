@@ -11,3 +11,12 @@ Lluis_polyrnn.jpg, Annotating Object Instances with a Polygon-RNN
 poster_v1_sceneparsing.jpg, Scene Parsing through ADE20K Dataset
 recipes.jpg, Learning Cross-modal Embeddings for Cooking Recipes and Food Images
 watermarks_cvpr17_poster.jpg, On the Effectiveness of Visible Watermarks
+Collegio_et_al_VSS_2017.jpg, Real-World Object Size Affects Attentional Allocation
+DamianoWalther_VSS2017.jpg, Increased scene exploration does not enhance memory
+lukavsky_VSS2017poster_handout.jpg, Scene categorization in the presence of a distractor
+PetersonJJ.jpg, The Effects of Unique Blur/Clarity Contrast on Visual Selective Attention as Measured by Eye Movements: Strong Clarity Capture and Weak Blur Repulsion
+poster_VSS2017_LoreGoetschalckx_FINAL.jpg, Are memorable images easier to categorize rapidly? 
+PosterVSS2017Email.jpg, Testing an early vision model on natural image stimuli
+VSS_Poster_May_2017_Final.jpg, Limits to Attentional Selection of Features
+vss2017_szafir.jpg, Effects of Size and Shape on Perceived Color Differences
+VSS2017_Thigpen.jpg, Quantifying the relation between pupil size and electrophysiological engagement of visual cortex

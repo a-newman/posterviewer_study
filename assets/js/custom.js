@@ -228,8 +228,9 @@ function createSurveys(tasks) {
         name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
         name = encodeURIComponent(name);
 
-        posterName = elt[1];
+        posterName = elt[1].trim();
         posterName = encodeURIComponent(posterName);
+        console.log("posterName", posterName);
         survey = SURVEY_ELT.replace("{{name}}", name);
         survey = survey.replace("{{poster}}", posterName);
         // add survey as a dom element
