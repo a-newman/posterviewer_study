@@ -1,6 +1,6 @@
-vss2017_szafir.jpg, vss2017_szafir.jpg
 DamianoWalther_VSS2017.gif, DamianoWalther_VSS2017.jpg
 VSS_Poster_May_2017_Final.gif, VSS_Poster_May_2017_Final.jpg
-Collegio_et_al_VSS_2017.gif, Collegio_et_al_VSS_2017.jpg
-PetersonJJ.gif, PetersonJJ.jpg
 lukavsky_VSS2017poster_handout.jpg, lukavsky_VSS2017poster_handout.jpg
+vss2017_szafir.gif, vss2017_szafir.jpg
+Collegio_et_al_VSS_2017.jpg, Collegio_et_al_VSS_2017.jpg
+PetersonJJ.gif, PetersonJJ.jpg
