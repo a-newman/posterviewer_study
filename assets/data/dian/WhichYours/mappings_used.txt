@@ -1,0 +1,12 @@
+1, B, other:UserData_VSS/ali/GIFs
+1, A, self
+2, B, other:UserData_VSS/benjamin/GIFs
+2, A, self
+3, B, other:UserData_VSS/ali/GIFs
+3, A, self
+4, A, other:UserData_VSS/benjamin/GIFs
+4, B, self
+5, B, other:UserData_VSS/benjamin/GIFs
+5, A, self
+6, B, other:VSS2017_randGIFs
+6, A, self
