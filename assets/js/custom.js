@@ -7,6 +7,8 @@ const DEMOGRAPHIC_FORM_ELEMENT = '<iframe src="https://docs.google.com/forms/d/e
 
 var NUM_SUBTASKS;
 
+var SEEN_THUMBNAILS = {};
+
 var custom = {
     loadTasks: function() {
         /*
@@ -31,13 +33,13 @@ var custom = {
                 url: MAPPING_PATH,
                 dataType: "text"
             }).then(function(data) {
-                return parse_matching_file(data)
+                return parse_matching_file(data);
             })
         ).then(function(files_to_posters, posters_to_names) {
             var tasks = []
             for (var file in files_to_posters) {
                 var filepath = subjectDataPath + file;
-                var poster = files_to_posters[file];
+                var poster = files_to_posters[file].trim();
                 var name = posters_to_names[poster];
                 tasks.push([filepath, name]);
             }
@@ -45,7 +47,7 @@ var custom = {
             NUM_SUBTASKS = numSubtasks;
             shuffleArray(tasks);
             preload_images(tasks);
-            console.log("tasks", tasks);
+            createSurveys(tasks);
             return [numSubtasks + 2, tasks];
         })
     },
@@ -66,6 +68,17 @@ var custom = {
          */
         $('.subtask').hide();
 
+        // callback that shows the google form
+        function formCallback() {
+            $('.poster-form').hide();
+            $('#show-thumbnail').hide();
+            $('.instruction-button').show();
+            $('#do-study-subtask').show();
+            $('#poster-form-' + taskIndex).show();
+            $('#next-button').show();
+            $('#prev-button').show();
+        }
+
         //special case for the demographic survey 
         if (taskIndex == NUM_SUBTASKS) {
             var name = gup('subject');
@@ -80,37 +93,35 @@ var custom = {
             return;
         }
 
-        var imSource = taskInput[0];
-        var studyTitle = taskInput[1];
-        // load the correct image
-        $("#thumbnail-container img").attr("src", imSource);
+        if (SEEN_THUMBNAILS[taskIndex]) {
+            // just show the survey 
+            formCallback();
+        } else {
+            // show the gif and everything 
+            $("#prev-button").show();
+            var imSource = taskInput[0];
+            var studyTitle = taskInput[1];
+            // load the correct image
+            $("#thumbnail-container img").attr("src", imSource);
 
-        $('#poster-form iframe').remove();
-        embedSurvey(studyTitle);
-
-        $('#confirm-show-gif').show();
-        $('#prev-button').hide();
-        $('#next-button').hide();
-
-        $('.num-seconds').text(NUM_SECONDS);
-
-        // callback that shows the google form
-        function formCallback() {
-            $('#show-thumbnail').hide();
-            $('.instruction-button').show();
-            $('#do-study-subtask').show();
-            $('#next-button').show();
-        }
-
-        // Set up a callback that shows the graph and timer 
-        $('#show-thumbnail-button').click(function() {
+            $('#confirm-show-gif').show();
+            $('#prev-button').hide();
             $('#next-button').hide();
-            $('.instruction-button').hide();
-            $('#confirm-show-gif').hide();
-            $('#show-thumbnail').show();
-            var timer = $('#thumbnail-timer');
-            runTimer(NUM_SECONDS-1, timer, formCallback);
-        })
+
+            $('.num-seconds').text(NUM_SECONDS);
+
+            // Set up a callback that shows the graph and timer 
+            $('#show-thumbnail-button').click(function() {
+                SEEN_THUMBNAILS[taskIndex] = true;
+                $('#next-button').hide();
+                $('#prev-button').hide();
+                $('.instruction-button').hide();
+                $('#confirm-show-gif').hide();
+                $('#show-thumbnail').show();
+                var timer = $('#thumbnail-timer');
+                runTimer(NUM_SECONDS-1, timer, formCallback);
+            })
+        }
     },
     collectData: function(taskInput, taskIndex, taskOutput) {
         /* 
@@ -148,6 +159,7 @@ var custom = {
          * 
          * returns: string indicating error message or falsey value
          */
+        //  make sure they have submitted the Google form 
         return;
     }
 };
@@ -207,13 +219,32 @@ function preload_images(data) {
     });
 }
 
-function embedSurvey(posterName) {
-    name = gup('subject');
-    name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
-    name = encodeURIComponent(name);
-    posterName = encodeURIComponent(posterName);
-    survey = SURVEY_ELT.replace("{{name}}", name);
-    survey = survey.replace("{{poster}}", posterName);
-    // add survey as a dom element
-    $('#poster-form').append($(survey));
+function createSurveys(tasks) {
+    tasks.forEach(function(elt, i) {
+        var container = $('#poster-form-container');
+        var surveyElt = $('<div class="poster-form" id="poster-form-' + i +'"></div>')
+
+        name = gup('subject');
+        name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
+        name = encodeURIComponent(name);
+
+        posterName = elt[1];
+        posterName = encodeURIComponent(posterName);
+        survey = SURVEY_ELT.replace("{{name}}", name);
+        survey = survey.replace("{{poster}}", posterName);
+        // add survey as a dom element
+        surveyElt.append($(survey));
+        container.append(surveyElt);
+    });
 }
+
+// function embedSurvey(posterName) {
+//     name = gup('subject');
+//     name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
+//     name = encodeURIComponent(name);
+//     posterName = encodeURIComponent(posterName);
+//     survey = SURVEY_ELT.replace("{{name}}", name);
+//     survey = survey.replace("{{poster}}", posterName);
+//     // add survey as a dom element
+//     $('#poster-form').append($(survey));
+// }
