@@ -98,14 +98,14 @@ var custom = {
             formCallback();
         } else {
             // show the gif and everything 
-            $("#prev-button").show();
+
             var imSource = taskInput[0];
             var studyTitle = taskInput[1];
             // load the correct image
             $("#thumbnail-container img").attr("src", imSource);
 
             $('#confirm-show-gif').show();
-            $('#prev-button').hide();
+            $('#prev-button').show();
             $('#next-button').hide();
 
             $('.num-seconds').text(NUM_SECONDS);
