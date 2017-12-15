@@ -1,0 +1,12 @@
+1, A, other:CVPR2017_randGIFs
+1, B, self
+2, A, other:CVPR2017_randGIFs
+2, B, self
+3, B, other:UserData/OTHER/GIFs
+3, A, self
+4, A, other:UserData/matt/GIFs
+4, B, self
+5, B, other:UserData/matt/GIFs
+5, A, self
+6, B, other:UserData/OTHER/GIFs
+6, A, self

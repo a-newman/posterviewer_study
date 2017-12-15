@@ -1,0 +1,6 @@
+carlVondrick.gif, carlVondrick.jpg
+DenseNet.jpg, DenseNet.jpg
+Lluis_polyrnn.gif, Lluis_polyrnn.jpg
+recipes.jpg, recipes.jpg
+watermarks_cvpr17_poster.gif, watermarks_cvpr17_poster.jpg
+julian_trevor.gif, julian_trevor.jpg

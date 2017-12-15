@@ -1,0 +1,6 @@
+carlVondrick, other:kimberli
+watermarks_cvpr17_poster, random
+Lluis_polyrnn, self
+julian_trevor, self
+recipes, static
+DenseNet, static

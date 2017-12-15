@@ -18,7 +18,7 @@ var custom = {
          * one object for each task; else, an object that will be made available to all subtasks
          */
         var subject = gup('subject');
-        var subjectDataPath = "assets/data/subjects/" + subject + "/";
+        var subjectDataPath = "assets/data/" + subject + "/StudyDir/";
         var files_path = subjectDataPath + "files_to_posters.txt";
         return $.when(
             $.ajax({

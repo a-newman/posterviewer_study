@@ -1,6 +1,0 @@
-1, emotion_recognition
-2, carlVondrick
-3, watermarks_cvpr17_poster
-4, recipes
-5, Lluis_polyrnn
-6, jiajun

@@ -34,14 +34,14 @@ function hideGif() {
 
 $(document).ready(function() {
     $('.gif').hide();
-    var name = gup("name");
+    var name = gup("subject");
     var id = gup("id");
     $(".name").text(name);
     $(".id").text(id);
 
     // figure out which poster this cooresponds to 
     $.ajax({
-        url: "data/" + name + "/WhichYours/files_used.txt", 
+        url: "../assets/data/" + name + "/WhichYours/files_used.txt", 
         dataType: "text"
     }).then(function(data) {
         var mapping = parse_matching_file(data); 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
 
     // fill in the images 
-    var base = "data/" + name + "/WhichYours/" + id;
+    var base = "../assets/data/" + name + "/WhichYours/" + id;
     $("#gif1").attr("src", base + "/A.gif");
     $("#gif2").attr("src", base + "/B.gif");
 

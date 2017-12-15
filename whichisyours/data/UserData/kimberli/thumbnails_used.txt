@@ -1,6 +1,0 @@
-DavidBau, other:OTHER
-watermarks_cvpr17_poster, random
-carlVondrick, self
-recipes, self
-ACam_poster, static
-poster_v1_sceneparsing, static
