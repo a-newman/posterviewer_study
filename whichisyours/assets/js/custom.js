@@ -1,4 +1,5 @@
 var POSTER_USED;
+var SURVEY_LINK = 'https://docs.google.com/forms/d/e/1FAIpQLSdWexhBPoZ-jD7g4ZLj9-Q7BdTC0LjYn397j_WiWAMKFSpWqw/viewform?usp=pp_url&entry.926476235={{name}}&entry.2102778111'
 
 function gup(name) {
     var regexS = "[\\?&]"+name+"=([^&#]*)";
@@ -38,6 +39,12 @@ $(document).ready(function() {
     var id = gup("id");
     $(".name").text(name);
     $(".id").text(id);
+
+    // add the survey link
+    nameFormatted = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
+    nameFormatted = encodeURIComponent(nameFormatted);
+    link = SURVEY_LINK.replace("{{name}}", nameFormatted);
+    $('#form-link').attr('href', link);
 
     // figure out which poster this cooresponds to 
     $.ajax({
