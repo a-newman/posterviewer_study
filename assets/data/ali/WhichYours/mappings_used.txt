@@ -1,0 +1,12 @@
+1, B, other:VSS2017_randGIFs
+1, A, self
+2, B, other:VSS2017_randGIFs
+2, A, self
+3, B, other:UserData_VSS/dian/GIFs
+3, A, self
+4, B, other:UserData_VSS/dian/GIFs
+4, A, self
+5, A, other:VSS2017_randGIFs
+5, B, self
+6, A, other:UserData_VSS/dian/GIFs
+6, B, self

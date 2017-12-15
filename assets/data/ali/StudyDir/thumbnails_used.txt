@@ -1,0 +1,6 @@
+vss2017_szafir, self
+VSS2017_Thigpen, self
+Collegio_et_al_VSS_2017, other:benjamin
+PosterVSS2017Email, random
+DamianoWalther_VSS2017, static
+poster_VSS2017_LoreGoetschalckx_FINAL, static
