@@ -1,0 +1,6 @@
+recipes, self
+watermarks_cvpr17_poster, self
+DavidBau, other:kimberli
+Amir_poster, random
+DenseNet, static
+poster_v1_sceneparsing, static

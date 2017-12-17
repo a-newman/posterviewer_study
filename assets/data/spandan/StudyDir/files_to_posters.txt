@@ -1,0 +1,6 @@
+DavidBau.gif, DavidBau.jpg
+Amir_poster.gif, Amir_poster.jpg
+recipes.gif, recipes.jpg
+watermarks_cvpr17_poster.gif, watermarks_cvpr17_poster.jpg
+poster_v1_sceneparsing.jpg, poster_v1_sceneparsing.jpg
+DenseNet.jpg, DenseNet.jpg
