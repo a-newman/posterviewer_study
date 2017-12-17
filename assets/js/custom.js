@@ -81,14 +81,11 @@ var custom = {
 
         //special case for the demographic survey 
         if (taskIndex == NUM_SUBTASKS) {
-            var name = gup('subject');
-            name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
-            name = encodeURIComponent(name);
-            var demoSurvey = DEMOGRAPHIC_FORM_ELEMENT.replace("{{name}}", name);
-            $('#demographic-form').append($(demoSurvey));
             $('#demographic-form').show();
             return;
         } else if (taskIndex == NUM_SUBTASKS + 1) {
+            //special case for the done screen
+            $('#next-button').hide();
             $('#done').show();
             return;
         }
@@ -220,13 +217,13 @@ function preload_images(data) {
 }
 
 function createSurveys(tasks) {
+    name = gup('subject');
+    name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
+    name = encodeURIComponent(name);
+
     tasks.forEach(function(elt, i) {
         var container = $('#poster-form-container');
         var surveyElt = $('<div class="poster-form" id="poster-form-' + i +'"></div>')
-
-        name = gup('subject');
-        name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
-        name = encodeURIComponent(name);
 
         posterName = elt[1].trim();
         posterName = encodeURIComponent(posterName);
@@ -237,6 +234,10 @@ function createSurveys(tasks) {
         surveyElt.append($(survey));
         container.append(surveyElt);
     });
+
+    // add the demographic survey 
+    var demoSurvey = DEMOGRAPHIC_FORM_ELEMENT.replace("{{name}}", name);
+    $('#demographic-form').append($(demoSurvey));
 }
 
 // function embedSurvey(posterName) {
