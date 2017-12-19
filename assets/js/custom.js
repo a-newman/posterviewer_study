@@ -2,8 +2,15 @@ const NUM_SECONDS = 10;
 
 const MAPPING_PATH = "assets/data/filename_to_titles.txt";
 
-const SURVEY_ELT = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLsYHr13R-D1AiyXVVyOYny7ILLMVlxm4ZvGisDV84eQfa8w/viewform?embedded=true&usp=pp_url&entry.1873128544={{name}}&entry.1583728358={{poster}}&entry.1804308406&entry.940646846&entry.893385613&entry.1174309994&entry.1033756814" width="850" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+const DAY_AFTER_SURVEY = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLsYHr13R-D1AiyXVVyOYny7ILLMVlxm4ZvGisDV84eQfa8w/viewform?embedded=true&usp=pp_url&entry.1873128544={{name}}&entry.1583728358={{poster}}&entry.1804308406&entry.940646846&entry.893385613&entry.1174309994&entry.1033756814" width="850" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
 const DEMOGRAPHIC_FORM_ELEMENT = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe7p0ouNtTV86Dj8OkRVem96rEOHg6wHAK6I8eH7duzNjp-3g/viewform?embedded=true&usp=pp_url&entry.1287108143={{name}}&entry.1484470814&entry.950656585&entry.154309458&entry.987865714" width="850" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+const WEEK_LATER_SURVEY = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSff47hyBHAImHwZ2RsQhvXvH0niI66mI8axG9dTllTRLqAsaA/viewform?embedded=true&usp=pp_url&entry.663203932={{name}}&entry.599842086={{poster}}&entry.2101421002" width="850" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+const OPINION_SURVEY = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLajU1yFI6EYyde1GJ8DykHFhhOiDMuAYy35Rwvturh8WRDg/viewform?embedded=true&usp=pp_url&entry.53755235={{name}}&entry.1705688765" width="850" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>';
+
+var POSTER_SURVEY;
+var END_SURVEY;
+
+var SHOW_SURVEY = true;
 
 var NUM_SUBTASKS;
 
@@ -20,6 +27,15 @@ var custom = {
          * one object for each task; else, an object that will be made available to all subtasks
          */
         var subject = gup('subject');
+
+        if (gup('weeklater') == 'true') {
+            POSTER_SURVEY = WEEK_LATER_SURVEY;
+            END_SURVEY = OPINION_SURVEY;
+        } else {
+            POSTER_SURVEY = DAY_AFTER_SURVEY;
+            END_SURVEY = DEMOGRAPHIC_FORM_ELEMENT;
+        }
+
         var subjectDataPath = "assets/data/" + subject + "/StudyDir/";
         var files_path = subjectDataPath + "files_to_posters.txt";
         return $.when(
@@ -44,11 +60,12 @@ var custom = {
                 tasks.push([filepath, name]);
             }
             var numSubtasks = tasks.length;
+            numSubtasks = SHOW_SURVEY ? numSubtasks + 2 : numSubtasks + 1;
             NUM_SUBTASKS = numSubtasks;
             shuffleArray(tasks);
             preload_images(tasks);
             createSurveys(tasks);
-            return [numSubtasks + 2, tasks];
+            return [numSubtasks, tasks]
         })
     },
     showTask: function(taskInput, taskIndex, taskOutput) {
@@ -79,14 +96,14 @@ var custom = {
             $('#prev-button').show();
         }
 
-        //special case for the demographic survey 
-        if (taskIndex == NUM_SUBTASKS) {
-            $('#demographic-form').show();
-            return;
-        } else if (taskIndex == NUM_SUBTASKS + 1) {
-            //special case for the done screen
+        // special case: for the last subtask, show the done screen 
+        if (taskIndex == NUM_SUBTASKS - 1) {
             $('#next-button').hide();
             $('#done').show();
+            return;
+        // special case: second-to-last task in the survey if we show the survey 
+        } else if (taskIndex == NUM_SUBTASKS - 2 && SHOW_SURVEY) {
+            $('#demographic-form').show();
             return;
         }
 
@@ -228,7 +245,7 @@ function createSurveys(tasks) {
         posterName = elt[1].trim();
         posterName = encodeURIComponent(posterName);
         console.log("posterName", posterName);
-        survey = SURVEY_ELT.replace("{{name}}", name);
+        survey = POSTER_SURVEY.replace("{{name}}", name);
         survey = survey.replace("{{poster}}", posterName);
         // add survey as a dom element
         surveyElt.append($(survey));
@@ -236,17 +253,6 @@ function createSurveys(tasks) {
     });
 
     // add the demographic survey 
-    var demoSurvey = DEMOGRAPHIC_FORM_ELEMENT.replace("{{name}}", name);
-    $('#demographic-form').append($(demoSurvey));
+    var endSurvey = END_SURVEY.replace("{{name}}", name);
+    $('#demographic-form').append($(endSurvey));
 }
-
-// function embedSurvey(posterName) {
-//     name = gup('subject');
-//     name = name.charAt(0).toUpperCase() + name.slice(1); // make the name uppercase
-//     name = encodeURIComponent(name);
-//     posterName = encodeURIComponent(posterName);
-//     survey = SURVEY_ELT.replace("{{name}}", name);
-//     survey = survey.replace("{{poster}}", posterName);
-//     // add survey as a dom element
-//     $('#poster-form').append($(survey));
-// }
