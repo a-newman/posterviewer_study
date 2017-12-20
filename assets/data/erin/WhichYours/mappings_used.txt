@@ -1,0 +1,12 @@
+1, B, other:UserData/camilo/GIFs
+1, A, self
+2, B, other:UserData/milo/GIFs
+2, A, self
+3, B, other:UserData/matt/GIFs
+3, A, self
+4, B, other:UserData/spandan/GIFs
+4, A, self
+5, B, other:UserData/kimberli/GIFs
+5, A, self
+6, B, other:UserData/OTHER/GIFs
+6, A, self

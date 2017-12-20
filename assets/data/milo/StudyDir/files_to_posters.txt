@@ -1,0 +1,6 @@
+julian_trevor.gif, julian_trevor.jpg
+poster_v1_sceneparsing.gif, poster_v1_sceneparsing.jpg
+ACam_poster.jpg, ACam_poster.jpg
+carlVondrick.jpg, carlVondrick.jpg
+DenseNet.gif, DenseNet.jpg
+DavidBau.gif, DavidBau.jpg

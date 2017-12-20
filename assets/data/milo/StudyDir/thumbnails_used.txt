@@ -1,0 +1,6 @@
+DenseNet, self
+DavidBau, self
+poster_v1_sceneparsing, other:kimberli
+julian_trevor, random
+carlVondrick, static
+ACam_poster, static

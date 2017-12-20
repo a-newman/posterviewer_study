@@ -1,0 +1,6 @@
+watermarks_cvpr17_poster, self
+recipes, self
+poster_v1_sceneparsing, other:kimberli
+julian_trevor, random
+Amir_poster, static
+cvpr17_poster_wenzhen, static

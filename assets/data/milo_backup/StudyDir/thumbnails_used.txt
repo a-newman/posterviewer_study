@@ -1,0 +1,5 @@
+julian_trevor, other:nathan
+DenseNet, random
+carlVondrick, self
+ACam_poster, self
+DavidBau, static

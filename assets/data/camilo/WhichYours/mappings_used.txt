@@ -1,0 +1,10 @@
+1, A, other:UserData/spandan/GIFs
+1, B, self
+2, A, other:UserData/nathan/GIFs
+2, B, self
+3, A, other:UserData/OTHER/GIFs
+3, B, self
+4, A, other:CVPR2017_randGIFs
+4, B, self
+5, A, other:CVPR2017_randGIFs
+5, B, self

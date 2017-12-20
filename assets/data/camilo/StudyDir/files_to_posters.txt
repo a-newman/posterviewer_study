@@ -1,0 +1,6 @@
+poster_v1_sceneparsing.gif, poster_v1_sceneparsing.jpg
+julian_trevor.gif, julian_trevor.jpg
+Amir_poster.jpg, Amir_poster.jpg
+cvpr17_poster_wenzhen.jpg, cvpr17_poster_wenzhen.jpg
+recipes.gif, recipes.jpg
+watermarks_cvpr17_poster.gif, watermarks_cvpr17_poster.jpg

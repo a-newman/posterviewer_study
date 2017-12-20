@@ -1,0 +1,6 @@
+Amir_poster.gif, Amir_poster.jpg
+recipes.gif, recipes.jpg
+jiajun.gif, jiajun.jpg
+watermarks_cvpr17_poster.gif, watermarks_cvpr17_poster.jpg
+ACam_poster.jpg, ACam_poster.jpg
+Lluis_polyrnn.jpg, Lluis_polyrnn.jpg

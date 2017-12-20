@@ -1,0 +1,6 @@
+Amir_poster, other:spandan
+watermarks_cvpr17_poster, random
+jiajun, self
+recipes, self
+ACam_poster, static
+Lluis_polyrnn, static
